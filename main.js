@@ -43,7 +43,7 @@ function countup()
     min += 1;
   }
   
-  if(min >10){
+  if(min >59){
     min = 0;
     hour +=1;
   }
