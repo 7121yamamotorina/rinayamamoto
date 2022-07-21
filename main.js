@@ -7,11 +7,6 @@
   
   //start
   $('#start').click(function(){
-    sec = 0;
-    min = 0;
-    hour = 0;
-   
-    $('#clock').html('00:00:00:00');
     timer = setInterval(countup, 100);
     
     $(this).prop('disabled',true);
@@ -31,7 +26,7 @@
   min = 0;
   hour =0 ;
  
-  $('#clock').html('00:00:00:00');
+  $('#clock').html('00:00:00');
     clearInterval(timer);
     
     $('#stop,#reset').prop('disabled', true);
