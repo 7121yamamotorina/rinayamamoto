@@ -1,39 +1,25 @@
-  $(function(){
-    var sec = 0;
-    var min = 0;
-    var hour = 0;
-    
-    var timer;
-  
-  //start
-  $('#start').click(function(){
-    timer = setInterval(countup, 100);
-    
-    $(this).prop('disabled',true);
-     $('#stop,#reset').prop('disabled',false);
-  });
-  
-  //stop
-  $('#stop').click(function(){
-    clearInterval(timer);
-    $(this).prop('disabled', true);
-     $('#start,#reset').prop('disabled', false);
-  });
-  
-  //reset
-  $('#reset').click(function(){
-  sec = 0;
-  min = 0;
-  hour =0 ;
- 
-  $('#clock').html('00:00:00');
-    clearInterval(timer);
-    
-    $('#stop,#reset').prop('disabled', true);
-     $('#start').prop('disabled', false);
-  });
+$(".dan").on("click", function() {
+  var target_value = $(event.target).text()
+  let result = document.getElementById("result")
+  if (target_value == "AC") {
+    result.value = "0"; 
+    console.log("0");
+  }
+  else if (target_value == "=") {
+    result.value = eval(result.value);
+  }   
+    if (result.value == "0") {
+      result.value = target_value;
+    } 
+    else {
+      if (result.value.charAt(0) == "0") {
+        result.value = result.value.slice(0, 0)
+      }
+      result.value += target_value;
+    }
+  }
+)
 
-//countup
 function countup()
 {
   sec +=1;
